@@ -46,14 +46,12 @@
                 })
             });
 
-            element.attr("tabindex", "-1").css({filter: "alpha(opacity=0)", "-moz-opacity": 0, opacity: 0, position: "absolute", "z-index": -1});
+            element.css({filter: "alpha(opacity=0)", "-moz-opacity": 0, opacity: 0, position: "absolute", "z-index": -1});
             element.before(replacementHtml);
             element.prev().addClass("fileinput");
             if (!$.support.cssPseudoClasses) {
                 element.css({"z-index":"auto", "cursor":"pointer"});
                 element.prev(".fileinput").css("z-index", -1);
-                element.removeAttr("tabindex");
-                element.prev(".fileinput").attr("tabindex", "-1");
                 element.hover(function() {
                     $(this).prev(".fileinput").addClass("hover");
                 }, function() {
